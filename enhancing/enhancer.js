@@ -21,9 +21,15 @@ function fail(item) {
 }
 
 function repair(item) {
-  return { ...item, durability: 100 };
+  return { 
+    ...item, 
+    durability: 100 
+  };
 }
 
 function get(item) {
-  return { ...item };
+  return { 
+    ...item,
+    name: (item.enhancement === 0) ? item.name : (`[+${item.enhancement}] ${item.name}`) 
+  };
 }
